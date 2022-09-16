@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    int r,res=0;
+    int temp=N;
+    while(N>0)
+    {
+      r=N%10;
+      res=res+(r*r*r);
+      N=N/10;
+    }
+    if(res==temp)
+    {
+      System.out.println("1");
+    }
+    else
+    {
+      System.out.println("0");
+    }
+	}
+}
