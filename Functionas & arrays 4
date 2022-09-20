@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int k = sc.nextInt();
+    int q = sc.nextInt();
+  
+    int arr[] = new int[n];
+    int rotatedArray[] = new int[n];
+    for(int i=0;i<n;i++){
+      arr[i] = sc.nextInt();
+    }
+    for(int i=0;i<n;i++){
+      int newIndex = (i+k)%n;
+      rotatedArray[newIndex] = arr[i];
+    }
+    for(int i=0;i<q;i++){
+      int index = sc.nextInt();
+      System.out.println(rotatedArray[index]);
+    }
+	}
+}
