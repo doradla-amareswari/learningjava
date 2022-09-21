@@ -1,0 +1,51 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+    Scanner sc = new Scanner(System.in);
+    int r = sc.nextInt();
+    int c = sc.nextInt();
+    int i,j;
+    int top=0,left=0,bottom=r-1,right=c-1,dir=0;
+    int a[][] = new int[r][c];
+    for(i=0;i<r;i++)
+    {
+    for(j=0;j<c;j++)
+    {
+      a[i][j]= sc.nextInt();
+    }
+    }
+    while(top<=bottom && left<=right){
+    if(dir==0){
+      for(i=left;i<=right;i++){
+        System.out.print(a[top][i]);
+      }top++;
+    }
+    else if(dir==1)
+    {
+      for(i=top;i<=bottom;i++){
+        System.out.print(a[i][right]);
+      }right--;
+    }
+      else if(dir==2)
+      {
+        for(i=right;i<=left;i++){
+          System.out.print(a[bottom][i]);
+        }bottom--;
+      }
+      else if(dir==3)
+      {
+        for(i=bottom;i<=top;i++){
+          System.out.print(a[i][left]);
+        }left++;
+      }
+      dir=(dir+1)%4;
+    }
+    
+	}
+}
